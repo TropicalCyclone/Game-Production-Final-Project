@@ -70,3 +70,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Game-Production-Final-Project/Library/
+Game-Production-Final-Project/Assets/VR-Game-Jam-Template-main/Assets/Audio/Kenney Audio/kenney_ui-audio/Visit Patreon.url.meta
+Game-Production-Final-Project/Assets/VR-Game-Jam-Template-main/
+Assets/VR-Game-Jam-Template-main/Assets/XRI_Examples/
