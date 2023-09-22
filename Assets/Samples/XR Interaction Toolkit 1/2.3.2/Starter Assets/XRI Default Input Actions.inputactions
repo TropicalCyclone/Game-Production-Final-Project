@@ -2132,10 +2132,10 @@
                 {
                     "name": "",
                     "id": "b806bbed-1736-4592-8d34-da64e23d7dac",
-                    "path": "<OculusTouchController>{LeftHand}/devicePose/velocity",
+                    "path": "<XRController>{LeftHand}/deviceVelocity",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "LeftVelocity",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -2143,10 +2143,10 @@
                 {
                     "name": "",
                     "id": "50d64b33-a033-4935-8f0a-29aa351a46e5",
-                    "path": "<OculusTouchController>{RightHand}/devicePose/velocity",
+                    "path": "<XRController>{RightHand}/deviceVelocity",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Generic XR Controller",
                     "action": "RightVelocity",
                     "isComposite": false,
                     "isPartOfComposite": false
