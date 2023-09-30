@@ -9,6 +9,8 @@ TagManager:
   - Water
   - Destroyer
   - Enemy
+  - Left Hand
+  - Right Hand
   layers:
   - Default
   - TransparentFX

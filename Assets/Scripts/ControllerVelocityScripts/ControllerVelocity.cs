@@ -5,15 +5,12 @@ using UnityEngine.InputSystem;
 
 public class ControllerVelocity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public InputActionProperty velocityProperty;
 
-    // Update is called once per frame
-    void Update()
+    public Vector3 Velocity { get; private set; } = Vector3.zero;
+
+    private void Update()
     {
-        
+        Velocity = velocityProperty.action.ReadValue<Vector3>();
     }
 }
