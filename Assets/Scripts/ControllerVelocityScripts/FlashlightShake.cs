@@ -13,10 +13,11 @@ public class FlashlightShake : MonoBehaviour
     private float batteryDrainSpeed;
     [SerializeField]
     private float batteryChargingSpeed;
-    private bool isCharging;
 
     private Vector3 lastpos;
     private Vector3 velocity;
+
+    private bool isOn;
     
     private float timeSinceLastShake;
     [SerializeField]
@@ -41,27 +42,31 @@ public class FlashlightShake : MonoBehaviour
 
     private void Update()
     {
-        
-      
-        Debug.Log(velocity.sqrMagnitude);
-        if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        if (isOn)
         {
-            RechargeBattery();
-            isCharging = true;
-
-        }
-        else { isCharging = false; }
-        
-        
-            if(flashlight.intensity > 0)
+            //Debug.Log(velocity.sqrMagnitude);
+            if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
             {
-                flashlight.intensity -= batteryDrainSpeed*Time.deltaTime;
+                RechargeBattery();
+                timeSinceLastShake = Time.unscaledTime;
+
             }
-       
+
+
+            if (flashlight.intensity > 0)
+            {
+                flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
+            }
+        }
     }
     public void RechargeBattery()
     {
         if (flashlight.intensity < batteryCapacity)
             flashlight.intensity += batteryChargingSpeed;
+    }
+
+    public void StartFlashlight()
+    {
+        isOn = true;
     }
 }
