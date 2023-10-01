@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashlight: {fileID: 0}
   batteryDrainSpeed: 3
-  batteryChargingSpeed: 5
+  batteryChargingSpeed: 10
   MinShakeInterval: 0.2
   ShakeDetectionThreshold: 10
 --- !u!54 &7927446773516664573
