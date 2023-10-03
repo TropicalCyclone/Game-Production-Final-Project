@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class FlashlightShake : MonoBehaviour
 {
+    private HealthBarBehaviour healthBarBehaviour;
     Rigidbody rb;
     [SerializeField]
     private Light flashlight;
     private float batteryCapacity;
-    private float BatteryRemaining;
     [SerializeField]
     private float batteryDrainSpeed;
     [SerializeField]
@@ -33,11 +33,12 @@ public class FlashlightShake : MonoBehaviour
         velocity = (transform.transform.position - lastpos)/Time.deltaTime;
         lastpos = transform.position;
     }
-    void Start()
+    void Awake()
     {
         //rb = GetComponent<Rigidbody>();
         flashlight = GetComponentInChildren<Light>();
         batteryCapacity = flashlight.intensity;
+        healthBarBehaviour = GetComponent<HealthBarBehaviour>();
     }
 
     private void Update()
@@ -56,6 +57,7 @@ public class FlashlightShake : MonoBehaviour
             if (flashlight.intensity > 0)
             {
                 flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
+                UpdateUI(batteryCapacity, flashlight.intensity);
             }
         }
     }
@@ -63,6 +65,11 @@ public class FlashlightShake : MonoBehaviour
     {
         if (flashlight.intensity < batteryCapacity)
             flashlight.intensity += batteryChargingSpeed;
+    }
+
+   public void UpdateUI(float maxBattery,float Currentbattery)
+    {
+        healthBarBehaviour.SetHealth(Currentbattery,maxBattery);
     }
 
     public void StartFlashlight()
