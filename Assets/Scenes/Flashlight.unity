@@ -801,6 +801,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flashlight
       objectReference: {fileID: 0}
+    - target: {fileID: 3877941802465886956, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3877941802465886956, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4652058973454618106, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -850,6 +860,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063025244824792525, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: Low.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063025244824792525, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: Low.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063025244824792525, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: Low.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063025244824792525, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: Low.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063025244824792525, guid: 1c5c0b6aeb6a35a4cb9840b95555a270,
+        type: 3}
+      propertyPath: High.a
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

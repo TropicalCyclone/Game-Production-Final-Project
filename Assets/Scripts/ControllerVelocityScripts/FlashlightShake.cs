@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class FlashlightShake : MonoBehaviour
 {
+    private HealthBarBehaviour healthBarBehaviour;
     Rigidbody rb;
     [SerializeField]
     private Light flashlight;
     private float batteryCapacity;
-    private float BatteryRemaining;
     [SerializeField]
     private float batteryDrainSpeed;
     [SerializeField]
     private float batteryChargingSpeed;
-    private bool isCharging;
 
     private Vector3 lastpos;
     private Vector3 velocity;
+
+    private bool isOn;
     
     private float timeSinceLastShake;
     [SerializeField]
@@ -32,36 +33,47 @@ public class FlashlightShake : MonoBehaviour
         velocity = (transform.transform.position - lastpos)/Time.deltaTime;
         lastpos = transform.position;
     }
-    void Start()
+    void Awake()
     {
         //rb = GetComponent<Rigidbody>();
         flashlight = GetComponentInChildren<Light>();
         batteryCapacity = flashlight.intensity;
+        healthBarBehaviour = GetComponent<HealthBarBehaviour>();
     }
 
     private void Update()
     {
-        
-      
-        Debug.Log(velocity.sqrMagnitude);
-        if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+        if (isOn)
         {
-            RechargeBattery();
-            isCharging = true;
-
-        }
-        else { isCharging = false; }
-        
-        
-            if(flashlight.intensity > 0)
+            //Debug.Log(velocity.sqrMagnitude);
+            if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
             {
-                flashlight.intensity -= batteryDrainSpeed*Time.deltaTime;
+                RechargeBattery();
+                timeSinceLastShake = Time.unscaledTime;
+
             }
-       
+
+
+            if (flashlight.intensity > 0)
+            {
+                flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
+                UpdateUI(batteryCapacity, flashlight.intensity);
+            }
+        }
     }
     public void RechargeBattery()
     {
         if (flashlight.intensity < batteryCapacity)
             flashlight.intensity += batteryChargingSpeed;
+    }
+
+   public void UpdateUI(float maxBattery,float Currentbattery)
+    {
+        healthBarBehaviour.SetHealth(Currentbattery,maxBattery);
+    }
+
+    public void StartFlashlight()
+    {
+        isOn = true;
     }
 }
