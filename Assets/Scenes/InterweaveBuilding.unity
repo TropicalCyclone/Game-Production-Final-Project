@@ -446,6 +446,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: InterweaveBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 3824509605709166364, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 34994d122675bd04faa20ae26f9d6122, type: 2}
+    - target: {fileID: 3875887329715204778, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875887329715204778, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 5071486550694878635, guid: 669b0f1839cde0245af77fd1965b1c03,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
