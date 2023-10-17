@@ -53,7 +53,7 @@ public class Stamina : MonoBehaviour
 
         if (isRunning && playerStamina > 0)
         {
-            
+            continuousMoveProviderBase.moveSpeed = RunSpeed;
             DecreaseEnergy();
         }
         else
@@ -98,6 +98,7 @@ public class Stamina : MonoBehaviour
             }
             else
             {
+                continuousMoveProviderBase.moveSpeed = moveSpeed / 3f;
                 Status.sprite = TiredSprite;
             }
         }
