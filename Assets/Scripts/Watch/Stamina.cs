@@ -3,36 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Stamina : MonoBehaviour
 {
     [SerializeField]
     private UnityEngine.XR.Interaction.Toolkit.ContinuousMoveProviderBase continuousMoveProviderBase;
     [SerializeField]
-    private float moveSpeed;
-    [SerializeField]
-    private float RunSpeed;
+    private float moveSpeed, RunSpeed, MaxStamina, playerStamina, dSpeed;
     [SerializeField]
     private HealthBarBehaviour healthBar;
-    [SerializeField]
-    private float MaxStamina;
-    [SerializeField]
-    private float playerStamina;
-    [SerializeField]
-    private float dSpeed;
-    [SerializeField]
     private Vector2 move;
     private Vector2 lastMove;
 
+    [SerializeField]
+    private Image Status;
+    [SerializeField]
+    private Sprite RunningSprite, TiredSprite;
     
+    private bool isRunning = false, isMoving, canRun;
 
-    private bool isRunning = false;
-    private bool isMoving;
-    private bool canRun;
-
-
-    public InputActionReference JoystickClick = null;
-    public InputActionReference PlayerMove;
+    public InputActionReference JoystickClick = null, PlayerMove;
 
 
 
@@ -43,7 +34,6 @@ public class Stamina : MonoBehaviour
             moveSpeed = continuousMoveProviderBase.moveSpeed;
         }
         playerStamina = MaxStamina;
-        healthBar.SetHealth(playerStamina, MaxStamina);
         JoystickClick.action.started += Running;
     }
     private void OnDestroy()
@@ -89,14 +79,27 @@ public class Stamina : MonoBehaviour
         {
             isRunning = false;
         }
-
-        if (isRunning)
+        if (continuousMoveProviderBase)
         {
-            continuousMoveProviderBase.moveSpeed = RunSpeed;
+            if (isRunning)
+            {
+                continuousMoveProviderBase.moveSpeed = RunSpeed;
+            }
+            else
+            {
+                continuousMoveProviderBase.moveSpeed = moveSpeed;
+            }
         }
-        else
+        if (Status)
         {
-            continuousMoveProviderBase.moveSpeed = moveSpeed;
+            if (canRun)
+            {
+                Status.sprite = RunningSprite;
+            }
+            else
+            {
+                Status.sprite = TiredSprite;
+            }
         }
     }
 
