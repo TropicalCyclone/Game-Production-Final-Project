@@ -2152,6 +2152,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Running",
+            "id": "ca435f00-31ff-4379-90a2-a0c4ef36f3f2",
+            "actions": [
+                {
+                    "name": "LeftJoystickClick",
+                    "type": "Button",
+                    "id": "95f33b98-293a-41df-94db-fda08b8c2772",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5f33bf48-5bfd-4fde-b0c6-5bdb1bcbb824",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftJoystickClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
