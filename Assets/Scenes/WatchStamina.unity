@@ -428,6 +428,11 @@ PrefabInstance:
       propertyPath: m_EnableFly
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8593312451679433650, guid: 154a332bbfbe4734da0739c97a961d92,
+        type: 3}
+      propertyPath: m_MoveSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8668540325915543696, guid: 154a332bbfbe4734da0739c97a961d92,
         type: 3}
       propertyPath: m_UIScrollAction.m_Action.m_Id
@@ -452,6 +457,18 @@ PrefabInstance:
       addedObject: {fileID: 537294754}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 154a332bbfbe4734da0739c97a961d92, type: 3}
+--- !u!114 &1415654572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5719445709835840952, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6581852337740016055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692182563
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +744,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 3c82242f7299e334297dbcde1657fc64,
         type: 3}
+    - target: {fileID: 2683784666930680130, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: Low.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683784666930680130, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: Low.g
+      value: 0.04279298
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683784666930680130, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: Low.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3643656898303064722, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
       propertyPath: m_fontSize
@@ -767,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 5097911147077664153, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
       propertyPath: m_Value
-      value: 0.739
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6814703365132157263, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
@@ -784,6 +816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Watch
       objectReference: {fileID: 0}
+    - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: Status
+      value: 
+      objectReference: {fileID: 1415654572}
     - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
       propertyPath: dSpeed
@@ -807,7 +844,7 @@ PrefabInstance:
     - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
       propertyPath: MaxStamina
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
@@ -817,10 +854,27 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
+      propertyPath: TiredSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8c56bd6dcfd3fb446bc6d1148de13c64,
+        type: 3}
+    - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
       propertyPath: JoystickClick
       value: 
       objectReference: {fileID: -7147712739581397951, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
+    - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: RunningSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 199af1ff6bd6b8e48959191d2081b760,
+        type: 3}
+    - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
+        type: 3}
+      propertyPath: playerStamina
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8358574349922239452, guid: 398d1f44af8097a45ae5adf755d1dc7f,
         type: 3}
       propertyPath: continuousMoveProviderBase

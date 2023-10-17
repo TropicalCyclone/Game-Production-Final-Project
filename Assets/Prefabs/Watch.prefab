@@ -926,24 +926,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aae3d7e9c49f9c42a1600641a0534a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  continuousMoveProviderBase: {fileID: 0}
   moveSpeed: 0
-  RunSpeed: 0
-  healthBar: {fileID: 0}
-  MaxStamina: 0
-  dSpeed: 0
-  JoystickClick: {fileID: 0}
-  PlayerMove:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Player Move
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 21cf96e1-cab8-4f10-892d-89268fa99ba4
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
+  RunSpeed: 2
+  MaxStamina: 5
+  playerStamina: 5
+  dSpeed: 1
+  healthBar: {fileID: 2683784666930680130}
+  Status: {fileID: 5719445709835840952}
+  RunningSprite: {fileID: 21300000, guid: 199af1ff6bd6b8e48959191d2081b760, type: 3}
+  TiredSprite: {fileID: 21300000, guid: 8c56bd6dcfd3fb446bc6d1148de13c64, type: 3}
+  JoystickClick: {fileID: -7147712739581397951, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  PlayerMove: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!1 &8945662810069538598
 GameObject:
   m_ObjectHideFlags: 0
