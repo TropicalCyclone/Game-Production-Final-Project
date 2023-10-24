@@ -11,7 +11,7 @@ public class FlashlightShake : MonoBehaviour
     [SerializeField]
     private Light flashlight;
     [SerializeField]
-    private MeshRenderer Light;
+    private SpriteRenderer Light;
 
     [Header("Flashlight Battery")]
     [SerializeField]
@@ -41,6 +41,7 @@ public class FlashlightShake : MonoBehaviour
     }
     void Awake()
     {
+        
         //rb = GetComponent<Rigidbody>();
         if(!flashlight)
         flashlight = GetComponentInChildren<Light>();
@@ -79,7 +80,14 @@ public class FlashlightShake : MonoBehaviour
    public void UpdateUI(float maxBattery,float Currentbattery)
     {
         healthBarBehaviour.SetHealth(Currentbattery,maxBattery);
-        Debug.Log(Mathf.InverseLerp(0, batteryCapacity, flashlight.intensity));
+        SetMaterialColor();
+    }
+
+    void SetMaterialColor()
+    {
+        Color lightColor = Light.color;
+        lightColor.a = Mathf.InverseLerp(0, batteryCapacity, flashlight.intensity);
+        Light.material.SetColor("_Color",lightColor);
     }
 
     public void StartFlashlight()
