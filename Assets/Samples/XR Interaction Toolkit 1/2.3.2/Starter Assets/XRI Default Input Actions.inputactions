@@ -2180,6 +2180,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Pause",
+            "id": "d64431c5-1c32-403a-a7ba-f6ac7f8a16e8",
+            "actions": [
+                {
+                    "name": "MenuButtonPress",
+                    "type": "Button",
+                    "id": "f600abb1-3df2-4066-a4d2-1f7605b0f379",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "74cba755-f8fd-4b13-afac-0066ac51a329",
+                    "path": "<OculusTouchController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuButtonPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
