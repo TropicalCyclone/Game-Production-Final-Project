@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Left Hand
   - Right Hand
+  - ParticleZone
   layers:
   - Default
   - TransparentFX
