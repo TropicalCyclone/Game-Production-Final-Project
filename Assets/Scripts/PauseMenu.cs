@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     private bool mPaused = false;
     [SerializeField] private InputActionReference menuButton;
-    [SerializeField] private Canvas pauseMenu;
+    [SerializeField] private InputActionReference PlayerMove;
+    [SerializeField] private Transform pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,9 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 move = PlayerMove.action.ReadValue<Vector2>();
+        bool isMoving = move.magnitude > 0.01f;
+        Debug.Log(isMoving);
         if (mPaused)
         {
             
@@ -34,6 +38,10 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pauseMenu.gameObject.SetActive(false);
+        }
+        if (isMoving)
+        {
+            mPaused = false;
         }
     }
 
