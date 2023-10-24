@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private InputActionReference menuButton;
     [SerializeField] private InputActionReference PlayerMove;
     [SerializeField] private Transform pauseMenu;
+
+   
     // Start is called before the first frame update
     void Start()
     {
