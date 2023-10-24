@@ -9,10 +9,21 @@ public class Stamina : MonoBehaviour
 {
     [SerializeField]
     private UnityEngine.XR.Interaction.Toolkit.ContinuousMoveProviderBase continuousMoveProviderBase;
-    [SerializeField]
-    private float moveSpeed, RunSpeed, MaxStamina, playerStamina, dSpeed;
-    [SerializeField]
-    private HealthBarBehaviour healthBar;
+
+    [Header("Player Speed")]
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float RunSpeed;
+
+    [Header("Stamina")]
+    [SerializeField] private float MaxStamina;
+    [SerializeField] private float playerStamina;
+
+    [Header("Stamina Decrease/Increase Speed")]
+    [SerializeField] private float dSpeed;
+
+    [Header("Healthbar Script")]
+    [SerializeField] private HealthBarBehaviour healthBar;
+
     private Vector2 move;
     private Vector2 lastMove;
 
@@ -107,8 +118,10 @@ public class Stamina : MonoBehaviour
     private void DecreaseEnergy()
     {
         playerStamina -= dSpeed * Time.deltaTime;
-        healthBar.SetHealth(playerStamina,MaxStamina);
-        //UpdateStaminaBar();
+        if (healthBar)
+        {
+            healthBar.SetHealth(playerStamina, MaxStamina);
+        }
 
         // Disable running when stamina is less than or equal to 0
         if (playerStamina <= 0)
@@ -122,8 +135,10 @@ public class Stamina : MonoBehaviour
     {
         playerStamina += dSpeed * Time.deltaTime;
         playerStamina = Mathf.Clamp(playerStamina, 0f, MaxStamina);
-        healthBar.SetHealth(playerStamina, MaxStamina);
-        //UpdateStaminaBar();
+        if (healthBar)
+        {
+            healthBar.SetHealth(playerStamina, MaxStamina);
+        }
 
         // Enable running when stamina is at least 50%
         if (playerStamina >= MaxStamina * 0.5f)
