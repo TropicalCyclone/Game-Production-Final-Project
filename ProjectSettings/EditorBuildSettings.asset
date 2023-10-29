@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: a28e6c811e1e9734aa8a348b0ff695d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Flashlight.unity
     guid: 6290c8e1f445dcf49978baddc0b36dfe
+  - enabled: 1
+    path: Assets/Scenes/Compiled-Player.unity
+    guid: a92054805dbcb88428402376bc6e6e99
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 46f887fdc3dbcc04fb2736f8a8be0d28,
       type: 2}
