@@ -19,6 +19,8 @@ public class DebugController : MonoBehaviour
 
 		private bool IsJumpingInput => Input.GetKeyDown(jumpKey) && canJump;
 		private bool IsSprintingInput => Input.GetKey(sprintKey) && canSprint;
+		private bool IsZoomingInput => Input.GetKey(zoomKey) && canZoom;
+		
 		private bool IsCrouchingInput => Input.GetKey(crouchKey) && canCrouch;
 		private bool IsHidingCursorInput => Input.GetKey(showCursorKey) && canHideCursor;
 
@@ -27,6 +29,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private KeyCode jumpKey = KeyCode.Space;
 		[SerializeField] private KeyCode crouchKey = KeyCode.C;
 		[SerializeField] private KeyCode showCursorKey = KeyCode.LeftAlt;
+		[SerializeField] private KeyCode zoomKey = KeyCode.Mouse1;
 
 		[Header("Function Options")] 
 		[SerializeField] private bool canMove = true;
@@ -35,6 +38,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private bool canSprint = true;
 		[SerializeField] private bool canCrouch = true;
 		[SerializeField] private bool canHideCursor = true;
+		[SerializeField] private bool canZoom = true;
 		[SerializeField] private bool useStamina = false;
 
 		[Header("Cameras")] 
@@ -43,6 +47,8 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private GameObject cameraTargetObject;
 		[SerializeField] private float maxLookUp = 90.0f;
 		[SerializeField] private float maxLookDown = -90.0f;
+		[SerializeField] private float normalFOV = 60f;
+		[SerializeField] private float zoomFOV = 150f;
 		private float _cinemachineTargetPitch;
 		private float _cinemachineTargetYaw;
 
@@ -137,6 +143,7 @@ public class DebugController : MonoBehaviour
 			JumpAndGravity();
 			GroundedCheck();
 			CursorHandler();
+			ZoomHandler();
 			Move();
 			Crouch();
 			StaminaHandler();
@@ -213,6 +220,13 @@ public class DebugController : MonoBehaviour
 				Cursor.visible = false;
 			}
 		}
+
+		private void ZoomHandler()
+		{
+			float targetFOV = IsZoomingInput ? zoomFOV : normalFOV;
+			mainCamera.fieldOfView = Mathf.Lerp(mainCamera.fieldOfView, targetFOV, Time.deltaTime * 10f);
+		}
+		
 		// ***** PLAYER MOVE *****
 		
 		private void Move()
