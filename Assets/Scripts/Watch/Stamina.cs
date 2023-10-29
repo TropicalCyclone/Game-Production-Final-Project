@@ -45,6 +45,7 @@ public class Stamina : MonoBehaviour
             moveSpeed = continuousMoveProviderBase.moveSpeed;
         }
         playerStamina = MaxStamina;
+        
         JoystickClick.action.started += Running;
     }
     private void OnDestroy()
@@ -54,7 +55,7 @@ public class Stamina : MonoBehaviour
 
     private void Update()
     {
-
+        healthBar.SetHealth(playerStamina, MaxStamina);
         move = PlayerMove.action.ReadValue<Vector2>();
         if (move != lastMove)
         {
@@ -79,11 +80,10 @@ public class Stamina : MonoBehaviour
             {
                 canRun = true;
             }
-
-            if (!isRunning && playerStamina < MaxStamina)
-            {
-                IncreaseEnergy();
-            }
+        }
+        if (!isRunning && playerStamina < MaxStamina)
+        {
+            IncreaseEnergy();
         }
 
         if (!isMoving)
