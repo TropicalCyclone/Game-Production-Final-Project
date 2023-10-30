@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DyanmicSceneManager : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     public static DyanmicSceneManager instance { get; private set; }  
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
-        Load("Compiled-Player");
         Load("Stairwell");
         Load("Floor-1");
         Load("Floor-3");
