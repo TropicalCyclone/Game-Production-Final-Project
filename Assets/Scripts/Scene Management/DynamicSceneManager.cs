@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DyanmicSceneManager : MonoBehaviour
+public class DynamicSceneManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    public static DyanmicSceneManager instance { get; private set; }  
+    public static DynamicSceneManager instance { get; private set; }  
     // Start is called before the first frame update
     void Awake()
     {
