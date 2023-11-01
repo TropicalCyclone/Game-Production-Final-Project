@@ -20,6 +20,7 @@ public class DebugController : MonoBehaviour
 		private bool IsJumpingInput => Input.GetKeyDown(jumpKey) && canJump;
 		private bool IsSprintingInput => Input.GetKey(sprintKey) && canSprint;
 		private bool IsZoomingInput => Input.GetKey(zoomKey) && canZoom;
+		private bool IsHandToolInput => Input.GetKeyDown(handToolKey) && canUseHandTool;
 		
 		private bool IsCrouchingInput => Input.GetKey(crouchKey) && canCrouch;
 		private bool IsHidingCursorInput => Input.GetKey(showCursorKey) && canHideCursor;
@@ -30,6 +31,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private KeyCode crouchKey = KeyCode.C;
 		[SerializeField] private KeyCode showCursorKey = KeyCode.LeftAlt;
 		[SerializeField] private KeyCode zoomKey = KeyCode.Mouse1;
+		[SerializeField] private KeyCode handToolKey = KeyCode.E;
 
 		[Header("Function Options")] 
 		[SerializeField] private bool canMove = true;
@@ -40,6 +42,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private bool canHideCursor = true;
 		[SerializeField] private bool canZoom = true;
 		[SerializeField] private bool useStamina = false;
+		[SerializeField] private bool canUseHandTool = true;
 
 		[Header("Cameras")] 
 		[SerializeField] private ViewMode currentViewMode = ViewMode.NormalFirstPerson;
@@ -110,6 +113,9 @@ public class DebugController : MonoBehaviour
 		private float _timeSinceLastStaminaRegen  = 5f;
 		private float _currentStamina;
 
+		[Header("HandTool Parameters")] 
+		[SerializeField] private GameObject currentHandTool; //data type should be changed
+
 		private const float Threshold = 0.01f;
 
 		public float GetStaminaValue => _currentStamina;
@@ -147,6 +153,7 @@ public class DebugController : MonoBehaviour
 			Move();
 			Crouch();
 			StaminaHandler();
+			HandToolHandler();
 
 			mainCamera.transform.position = cameraTargetObject.transform.position;
 			mainCamera.transform.rotation = cameraTargetObject.transform.rotation;
@@ -395,6 +402,14 @@ public class DebugController : MonoBehaviour
 		}
 
 		// ***** PLAYER INTERACTION *****
+
+		private void HandToolHandler()
+		{
+			if (IsHandToolInput)
+			{
+				currentHandTool.SetActive(!currentHandTool.activeInHierarchy);
+			}
+		}
 		
 		// ***** PLAYER STAMINA *****
 
