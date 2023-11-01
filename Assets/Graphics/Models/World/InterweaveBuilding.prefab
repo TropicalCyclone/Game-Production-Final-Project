@@ -6703,6 +6703,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorRoomSet (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 1085478454467998739, guid: 110f4f6182cabf645b4a3ba386249184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429286695454701842, guid: 110f4f6182cabf645b4a3ba386249184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.279
+      objectReference: {fileID: 0}
     - target: {fileID: 4693680037367980372, guid: 110f4f6182cabf645b4a3ba386249184,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -14040,6 +14050,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1bd5f10e00ad7224fbe02edf1a6599f2, type: 2}
+    - target: {fileID: 9158764999347912012, guid: 57f8631a52a78cc438b7c2b9840cdd3f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7df29d518067ffe4ca68d5d5b1747f75, type: 2}
     - target: {fileID: 9201282069235052200, guid: 57f8631a52a78cc438b7c2b9840cdd3f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -22433,6 +22448,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoorRoomSet (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085478454467998739, guid: 110f4f6182cabf645b4a3ba386249184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.274
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429286695454701842, guid: 110f4f6182cabf645b4a3ba386249184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.274
       objectReference: {fileID: 0}
     - target: {fileID: 4693680037367980372, guid: 110f4f6182cabf645b4a3ba386249184,
         type: 3}
