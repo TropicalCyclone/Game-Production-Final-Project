@@ -11,13 +11,13 @@ public class DynamicSceneManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        Load("Stairwell");
-        Load("Floor-1");
-        Load("Floor-3");
-        Load("Floor-4");
-        Load("Floor-5");
+        //Load("Stairwell");
+        //Load("Floor-1");
+        //Load("Floor-3");
+        //Load("Floor-4");
+        //Load("Floor-5");
         Load("Floor-6");
-        Load("Floor-7");
+        //Load("Floor-7");
     }
 
     // Update is called once per frame
