@@ -187,6 +187,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: InterweaveBuilding
       objectReference: {fileID: 0}
+    - target: {fileID: 3303007237613823146, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303007237613823146, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303007237613823146, guid: 669b0f1839cde0245af77fd1965b1c03,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2305940903087803882, guid: 669b0f1839cde0245af77fd1965b1c03, type: 3}
