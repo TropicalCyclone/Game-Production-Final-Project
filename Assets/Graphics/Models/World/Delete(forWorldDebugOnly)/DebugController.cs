@@ -43,6 +43,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private bool canZoom = true;
 		[SerializeField] private bool useStamina = false;
 		[SerializeField] private bool canUseHandTool = true;
+		[SerializeField] private bool canHeadBob = true;
 
 		[Header("Cameras")] 
 		[SerializeField] private ViewMode currentViewMode = ViewMode.NormalFirstPerson;
@@ -60,6 +61,7 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private float walkSpeed = 4.0f;
 		[SerializeField] private float sprintSpeed = 6.0f;
 		[SerializeField] private float crouchSpeed = 1.0f;
+		[SerializeField] private float slopeSpeedMultiplier  = 0.5f;
 		[SerializeField] private float speedChangeRate = 10.0f;
 		private CharacterController _controller;
 		private Vector2 _currentInput;
@@ -112,6 +114,15 @@ public class DebugController : MonoBehaviour
 		[SerializeField] private float staminaRegenValue = 2;
 		private float _timeSinceLastStaminaRegen  = 5f;
 		private float _currentStamina;
+		
+		[Header("Headbob Parameters")]
+        [SerializeField] private float walkBobSpeed = 14f;
+        [SerializeField] private float walkBobAmount = 0.05f;
+        [SerializeField] private float SprintBobSpeed = 18f;
+        [SerializeField] private float SprintBobAmount = 0.11f;
+        [SerializeField] private float crouchBobSpeed = 7f;
+        [SerializeField] private float crouchBobAmount = 0.02f;
+        private float timer = 20;
 
 		[Header("HandTool Parameters")] 
 		[SerializeField] private GameObject currentHandTool; //data type should be changed
@@ -142,6 +153,7 @@ public class DebugController : MonoBehaviour
 
 			_currentStamina = maxStamina;
 			_timeSinceLastStaminaRegen = timeBeforeStart;
+
 		}
 
 		private void Update()
@@ -154,6 +166,7 @@ public class DebugController : MonoBehaviour
 			Crouch();
 			StaminaHandler();
 			HandToolHandler();
+			HandleHeadBob();
 
 			mainCamera.transform.position = cameraTargetObject.transform.position;
 			mainCamera.transform.rotation = cameraTargetObject.transform.rotation;
@@ -275,6 +288,15 @@ public class DebugController : MonoBehaviour
 
 			// normalise input direction
 			Vector3 inputDirection = new Vector3(_currentInput.x, 0.0f, _currentInput.y).normalized;
+			
+			//adjust speed on slopes
+			if (_controller.isGrounded)
+			{
+				RaycastHit hit;
+				Physics.Raycast(transform.position, Vector3.down, out hit);
+				float slopeAngle = Vector3.Angle(hit.normal, Vector3.up);
+				_speed *= Mathf.Max(slopeSpeedMultiplier, Mathf.Cos(slopeAngle * Mathf.Deg2Rad));
+			}
 
 			if (currentViewMode == ViewMode.NormalFirstPerson)
 			{
@@ -304,6 +326,22 @@ public class DebugController : MonoBehaviour
 		private float PlayerSpeed()
 		{
 			return (IsSprintingInput && !IsCrouchingInput && !isCurrentlyCrouching) ? sprintSpeed : (IsCrouchingInput || (isCurrentlyCrouching && !canStand)) ? crouchSpeed : walkSpeed;
+		}
+		
+		private void HandleHeadBob()
+		{
+			if (!canHeadBob) return;
+			
+			if (!_controller.isGrounded) return;
+
+			if (Mathf.Abs(_controller.velocity.x) > 0.1f || Mathf.Abs(_controller.velocity.z) > 0.1f)
+			{
+				timer += Time.deltaTime * (IsCrouchingInput ? crouchBobSpeed : IsSprintingInput ? SprintBobSpeed : walkBobSpeed);
+				cameraTargetObject.transform.localPosition = new Vector3( 
+					  cameraTargetObject.transform.localPosition.x,
+					  cameraTargetObject.transform.localPosition.y + Mathf.Sin(timer)* (IsCrouchingInput ? crouchBobAmount : IsSprintingInput ? SprintBobAmount : walkBobAmount),
+					  cameraTargetObject.transform.localPosition.z);
+			}
 		}
 
 		// ***** PLAYER JUMP *****
