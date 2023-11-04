@@ -36,7 +36,11 @@ public class Stamina : MonoBehaviour
 
     public InputActionReference JoystickClick = null, PlayerMove;
 
+    public void SetMoveSpeed(float input)
+    {
+        moveSpeed = input;
 
+    }
 
     private void Awake()
     {
