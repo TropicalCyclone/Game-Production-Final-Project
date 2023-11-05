@@ -127,6 +127,8 @@ public class DebugController : MonoBehaviour
 		[Header("HandTool Parameters")] 
 		[SerializeField] private GameObject currentHandTool; //data type should be changed
 
+		[SerializeField] private float forceMagnitude;
+
 		private const float Threshold = 0.01f;
 
 		public float GetStaminaValue => _currentStamina;
@@ -448,7 +450,21 @@ public class DebugController : MonoBehaviour
 				currentHandTool.SetActive(!currentHandTool.activeInHierarchy);
 			}
 		}
-		
+
+		private void OnControllerColliderHit(ControllerColliderHit hit)
+		{
+			Rigidbody rb = hit.collider.attachedRigidbody;
+
+			if (rb != null)
+			{
+				Vector3 forceDirection = hit.gameObject.transform.position - transform.position;
+				forceDirection.y = 0;
+				forceDirection.Normalize();
+				
+				rb.AddForceAtPosition(forceDirection * forceMagnitude, transform.position, ForceMode.Impulse);
+			}
+		}
+
 		// ***** PLAYER STAMINA *****
 
 		private void StaminaHandler()

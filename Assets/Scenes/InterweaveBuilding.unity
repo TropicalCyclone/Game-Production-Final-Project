@@ -293,7 +293,7 @@ Transform:
   m_GameObject: {fileID: 737866666}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -4.35, y: 1.665, z: 15.535}
+  m_LocalPosition: {x: -4.35, y: 1.665, z: 8.6640005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -384,26 +384,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 304951620577410854, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 404042624791628628, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 574035880963679387, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1559097313499044513, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3224912516797005192, guid: 669b0f1839cde0245af77fd1965b1c03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -458,21 +438,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InterweaveBuilding
-      objectReference: {fileID: 0}
-    - target: {fileID: 3359885390023338176, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4206444210932895376, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6633598532808387617, guid: 669b0f1839cde0245af77fd1965b1c03,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5347,7 +5312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1264649401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5909,7 +5874,7 @@ Transform:
   m_GameObject: {fileID: 4539458720848141056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 28.19, z: 0}
+  m_LocalPosition: {x: 0, y: 28.19, z: 6.871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6023,6 +5988,7 @@ MonoBehaviour:
   crouchBobSpeed: 5
   crouchBobAmount: 0.005
   currentHandTool: {fileID: 4539458720998305694}
+  forceMagnitude: 1
 --- !u!1 &4539458720954275768
 GameObject:
   m_ObjectHideFlags: 0
