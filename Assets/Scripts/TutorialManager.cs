@@ -6,40 +6,46 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
-    [SerializeField] private List<Slide> _slide;
+    [SerializeField] private List<Slide> _slideshow;
     [SerializeField] private int _slideNumber = 1;
     [SerializeField] private Image _tvScreen;
     [SerializeField] private float brightness = 0f;
+    [SerializeField] private List<GameObject> TutorialObjectHider;
 
     public int GetSlideNumber { get { return _slideNumber; } }
 
-    private bool _onStart = false;
     // Start is called before the first frame update
 
     private void OnEnable()
     {
+       
         RenderSettings.reflectionIntensity = 0.1f;
         SetImage(_slideNumber);
     }
 
     private void FixedUpdate()
     {
-
+        
     }
 
     private void Update()
     {
-        if (!_onStart)
+      if(_slideNumber == _slideshow.Count)
         {
-            _onStart = true;
+            HideAllObjects();
         }
+    }
+
+    public void SetLightBrightness(float value)
+    {
+        RenderSettings.ambientLight = new Color(0.1f * value, 0.1f * value, 0.1f * value);
     }
 
     private void SetImage(int slideNumber)
     {
         if (_tvScreen != null)
         {
-            _tvScreen.sprite = _slide[slideNumber-1].GetImage();
+            _tvScreen.sprite = _slideshow[slideNumber-1].GetImage();
         }
     }
 
@@ -54,13 +60,21 @@ public class TutorialManager : MonoBehaviour
 
     public void NextSlide()
     {
-        if (_slideNumber < _slide.Count)
+        if (_slideNumber < _slideshow.Count)
             _slideNumber++;
         SetImage(_slideNumber);
 
-        if(_slideNumber == _slide.Count)
+        if(_slideNumber == _slideshow.Count)
         {
             //characterController.enabled = true;
+        }
+    }
+
+    public void HideAllObjects()
+    {
+        foreach (GameObject obj in TutorialObjectHider)
+        {
+            obj.SetActive(false);
         }
     }
 }
