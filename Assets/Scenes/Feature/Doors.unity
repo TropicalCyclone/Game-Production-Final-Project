@@ -746,17 +746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7540424512818654510, guid: 47267f8cff602b44b82f0391f590ca58,
         type: 3}
-      propertyPath: m_ConnectedBody
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7540424512818654510, guid: 47267f8cff602b44b82f0391f590ca58,
-        type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8397752046838230275, guid: 47267f8cff602b44b82f0391f590ca58,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
