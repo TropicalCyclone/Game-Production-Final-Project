@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class FlashlightShake : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField]
     private HealthBarBehaviour healthBarBehaviour;
     Rigidbody rb;
     [SerializeField]
     private Light flashlight;
+    [SerializeField]
+    private SpriteRenderer Light;
+
+    [Header("Flashlight Battery")]
+    [SerializeField]
     private float batteryCapacity;
     [SerializeField]
     private float batteryDrainSpeed;
     [SerializeField]
     private float batteryChargingSpeed;
-
     private Vector3 lastpos;
     private Vector3 velocity;
-
     private bool isOn;
     
-    private float timeSinceLastShake;
+    [Header("Flashlight Shake")]
     [SerializeField]
     private float MinShakeInterval;
     [SerializeField]
     private float ShakeDetectionThreshold;
+    private float timeSinceLastShake;
     private float sqrShakeDetectionThreshold;
     
     // Start is called before the first frame update
@@ -35,9 +41,13 @@ public class FlashlightShake : MonoBehaviour
     }
     void Awake()
     {
+        
         //rb = GetComponent<Rigidbody>();
+        if(!flashlight)
         flashlight = GetComponentInChildren<Light>();
+
         batteryCapacity = flashlight.intensity;
+        if(!healthBarBehaviour)
         healthBarBehaviour = GetComponent<HealthBarBehaviour>();
     }
 
@@ -70,6 +80,14 @@ public class FlashlightShake : MonoBehaviour
    public void UpdateUI(float maxBattery,float Currentbattery)
     {
         healthBarBehaviour.SetHealth(Currentbattery,maxBattery);
+        SetMaterialColor();
+    }
+
+    void SetMaterialColor()
+    {
+        Color lightColor = Light.color;
+        lightColor.a = Mathf.InverseLerp(0, batteryCapacity, flashlight.intensity);
+        Light.material.SetColor("_Color",lightColor);
     }
 
     public void StartFlashlight()

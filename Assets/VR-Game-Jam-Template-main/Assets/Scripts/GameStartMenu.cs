@@ -6,17 +6,34 @@ using UnityEngine.UI;
 public class GameStartMenu : MonoBehaviour
 {
     [Header("UI Pages")]
-    public GameObject mainMenu;
-    public GameObject options;
-    public GameObject about;
+    [SerializeField]
+    private GameObject mainMenu;
+    [SerializeField]
+    private GameObject options;
+    [SerializeField]
+    private GameObject about;
+
+
+    [Header("CanvasAnimations")]
+    [SerializeField]
+    private Animator MainMenu;
+    [SerializeField]
+    private Animator Transition_Menu;
 
     [Header("Main Menu Buttons")]
-    public Button startButton;
-    public Button optionButton;
-    public Button aboutButton;
-    public Button quitButton;
+    [SerializeField]
+    private Button startButton;
+    [SerializeField]
+    private Button optionButton;
+    [SerializeField]
+    private Button aboutButton;
+    [SerializeField]
+    private Button quitButton;
+    [SerializeField]
+    private List<Button> returnButtons;
 
-    public List<Button> returnButtons;
+
+    private bool Button;
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +63,14 @@ public class GameStartMenu : MonoBehaviour
         SceneTransitionManager.singleton.GoToSceneAsync(1);
     }
 
+    public void Back()
+    {
+            MainMenu.SetBool("Activate", false);
+            Transition_Menu.SetBool("Activate", false);
+        options.SetActive(false);
+        about.SetActive(false);
+    }
+
     public void HideAll()
     {
         mainMenu.SetActive(false);
@@ -55,19 +80,23 @@ public class GameStartMenu : MonoBehaviour
 
     public void EnableMainMenu()
     {
+        MainMenu.SetBool("Activate", false);
+        Transition_Menu.SetBool("Activate", false);
         mainMenu.SetActive(true);
         options.SetActive(false);
         about.SetActive(false);
     }
     public void EnableOption()
     {
-        mainMenu.SetActive(false);
+        MainMenu.SetBool("Activate", true);
+        Transition_Menu.SetBool("Activate", true);
         options.SetActive(true);
         about.SetActive(false);
     }
     public void EnableAbout()
     {
-        mainMenu.SetActive(false);
+        MainMenu.SetBool("Activate", true);
+        Transition_Menu.SetBool("Activate", true);
         options.SetActive(false);
         about.SetActive(true);
     }
