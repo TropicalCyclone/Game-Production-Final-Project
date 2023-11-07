@@ -31,7 +31,6 @@ public class PauseMenu : MonoBehaviour
     {
         Vector2 move = PlayerMove.action.ReadValue<Vector2>();
         bool isMoving = move.magnitude > 0.01f;
-        Debug.Log(isMoving);
         if (mPaused)
         {
             
