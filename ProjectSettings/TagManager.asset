@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - Left Hand
   - Right Hand
+  - Placard
+  - Socket
   layers:
   - Default
   - TransparentFX
