@@ -2,32 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8cc79cc-c552-48b4-8505-200ecb6fe0d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game-Production-Final-Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game-Production-Final-Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/World/Delete(forWorldDebugOnly)/DebugController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/World/Delete(forWorldDebugOnly)/DebugController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/World/Delete(forWorldDebugOnly)/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/World/Delete(forWorldDebugOnly)/Global Volume Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/World/InterweaveBuilding.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/World/InterweaveBuilding.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Models/World/fbx/BathroomDoors.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Models/World/fbx/BathroomDoors.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/All doors.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doors/All doors.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/ClinicDoor.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/ClinicDoor.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorAutherizedPersonnel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorAutherizedPersonnel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorCafe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorCafe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorDoubleGlassEntrance.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorDoubleGlassEntrance.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorDoubleRoomSet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorDoubleRoomSet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorElectricalRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorElectricalRoom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorFireExit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorFireExit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassDoubleSlanted.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassDoubleSlanted.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTall1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTall1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTall2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTall2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassType1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassType1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassType2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassType2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTypeLibrary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorGlassTypeLibrary.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorPrayerRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorPrayerRoom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorRoomSet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorRoomSet.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorStudio.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorStudio.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorWoodNormal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorWoodNormal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/DoorWoodShowerRoom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/DoorWoodShowerRoom.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/InterweaveBuilding.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/InterweaveBuilding.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +70,7 @@
       <workItem from="1696059136935" duration="1215000" />
       <workItem from="1696061951731" duration="596000" />
       <workItem from="1697053427698" duration="2649000" />
-      <workItem from="1699217852154" duration="2527000" />
+      <workItem from="1699217852154" duration="3158000" />
     </task>
     <servers />
   </component>

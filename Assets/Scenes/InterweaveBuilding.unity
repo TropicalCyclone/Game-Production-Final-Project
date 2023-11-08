@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 1182495256}
   - component: {fileID: 1182495255}
   - component: {fileID: 1182495257}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5527,7 +5527,7 @@ GameObject:
   - component: {fileID: 1718588329}
   - component: {fileID: 1718588331}
   - component: {fileID: 1718588330}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5727,7 +5727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458719758028542}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LookAtFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5758,7 +5758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458719915738853}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugLook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5790,7 +5790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720456691818}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5824,7 +5824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720574303118}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugPlayerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5858,7 +5858,7 @@ GameObject:
   - component: {fileID: 4539458720848141057}
   - component: {fileID: 4539458720848141062}
   - component: {fileID: 4539458720848141063}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5949,7 +5949,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   sprintSpeed: 5
   crouchSpeed: 1
-  slopeSpeedMultiplier: 0.5
+  slopeSpeedMultiplier: 0.9
   speedChangeRate: 10
   jumpHeight: 1.2
   jumpTimeout: 0.1
@@ -5982,13 +5982,13 @@ MonoBehaviour:
   timeBeforeStart: 5
   staminaRegenValue: 2
   walkBobSpeed: 10
-  walkBobAmount: 0.008
+  walkBobAmount: 0.005
   SprintBobSpeed: 14
-  SprintBobAmount: 0.02
+  SprintBobAmount: 0.008
   crouchBobSpeed: 5
-  crouchBobAmount: 0.005
+  crouchBobAmount: 0.002
   currentHandTool: {fileID: 4539458720998305694}
-  forceMagnitude: 1
+  forceMagnitude: 1.5
 --- !u!1 &4539458720954275768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5998,7 +5998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720954275769}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6117,7 +6117,7 @@ GameObject:
   - component: {fileID: 4539458720998305695}
   - component: {fileID: 4539458720998305693}
   - component: {fileID: 4539458720998305692}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6148,7 +6148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458721084486383}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

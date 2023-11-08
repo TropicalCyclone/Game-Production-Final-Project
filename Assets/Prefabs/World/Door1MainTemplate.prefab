@@ -109,9 +109,9 @@ HingeJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -2.568, y: 0, z: -4.8867536}
   serializedVersion: 2
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
-    spring: 4.95
+    spring: 5
     damper: 0.2
     targetPosition: 0
   m_UseMotor: 0
