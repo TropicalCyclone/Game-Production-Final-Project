@@ -9,7 +9,7 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private List<Slide> _slideshow;
     [SerializeField] private int _slideNumber = 1;
     [SerializeField] private Image _tvScreen;
-    [SerializeField] private float brightness = 0f;
+    //[SerializeField] private float brightness = 0f;
     [SerializeField] private List<GameObject> TutorialObjectHider;
 
     public int GetSlideNumber { get { return _slideNumber; } }
@@ -19,7 +19,7 @@ public class TutorialManager : MonoBehaviour
     private void OnEnable()
     {
        
-        RenderSettings.reflectionIntensity = 0.1f;
+        
         SetImage(_slideNumber);
     }
 

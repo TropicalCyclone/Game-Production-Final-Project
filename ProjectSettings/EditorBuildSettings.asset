@@ -15,31 +15,31 @@ EditorBuildSettings:
     path: Assets/Scenes/Flashlight.unity
     guid: 6290c8e1f445dcf49978baddc0b36dfe
   - enabled: 0
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/Depricated - Level Scenes/GameScene.unity
     guid: c1145a66d69ff504aa6d8712fc6e97f4
   - enabled: 0
     path: Assets/Scenes/Compiled-Player.unity
     guid: a92054805dbcb88428402376bc6e6e99
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Stairwell.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Stairwell.unity
     guid: bd832caba02178d4bacfad401c91559e
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-1.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-1.unity
     guid: 69c87dbe59538f34596ecb27820be90c
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-3.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-3.unity
     guid: 009fd89978f2d7f49839f4a51ea7a691
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-4.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-4.unity
     guid: 78d5d0455ef35ce4d964b0b605b46324
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-5.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-5.unity
     guid: d4f68e25193fa4549ab1718e5e47e9c3
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-6.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-6.unity
     guid: fdad5af36e1da2f4f94eaa3c016e0d79
   - enabled: 0
-    path: Assets/Scenes/Level Scenes/Floor-7.unity
+    path: Assets/Scenes/Depricated - Level Scenes/Floor-7.unity
     guid: bedf63e92565fb044ad4d7e1eab2fe12
   - enabled: 0
     path: Assets/Scenes/Game.unity
