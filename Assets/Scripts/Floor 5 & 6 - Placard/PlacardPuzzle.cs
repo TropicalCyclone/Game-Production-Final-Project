@@ -7,17 +7,17 @@ public class PlacardPuzzle : MonoBehaviour
     private List<XRSocketInteractor> sockets = new List<XRSocketInteractor>();
     public bool isPuzzleComplete = false;
 
-    [Header("Game Objects")]
+    [Header("Placard Sockets")]
     public XRSocketInteractor socket1;
     public XRSocketInteractor socket2;
     public XRSocketInteractor socket3;
+
+    [Header("Placards")]
     public XRGrabInteractable placard1;
     public XRGrabInteractable placard2;
     public XRGrabInteractable placard3;
 
-    [Header("Level Progression")]
-    public GameObject DisableLevelLoop;
-
+    public Floor56Manager floor56Manager;
     private Dictionary<XRSocketInteractor, XRBaseInteractable> socketPlacardPairs = new Dictionary<XRSocketInteractor, XRBaseInteractable>();
 
     [System.Obsolete]
@@ -77,10 +77,11 @@ public class PlacardPuzzle : MonoBehaviour
         if (isPuzzleComplete)
         {
             Debug.Log("Puzzle Complete!");
+            
             // Deactivate the GameObject when the puzzle is complete
-            if (DisableLevelLoop != null)
+            if (floor56Manager != null)
             {
-                DisableLevelLoop.SetActive(false);
+                floor56Manager.HideAllObjects();
             }
         }
         else
