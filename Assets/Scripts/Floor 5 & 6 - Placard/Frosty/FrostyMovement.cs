@@ -24,6 +24,10 @@ public class FrostyRoam : MonoBehaviour
     private float currentChaseTime = 0f;
     private bool isChasing = false;
 
+    [Header("Last Player Position Settings")]
+    [SerializeField] private float moveToLastPlayerTime = 20f; // Time to move towards the last player position
+    private float currentMoveToLastPlayerTime = 0f;
+    private bool isMovingToLastPlayer = false;
 
     GameObject player;
     private NavMeshAgent agent;
@@ -63,7 +67,7 @@ public class FrostyRoam : MonoBehaviour
         else if (isChasing)
         {
             currentChaseTime += Time.deltaTime;
-            Debug.Log("Time left: " + currentChaseTime);
+            Debug.Log("Escape Time: " + currentChaseTime);
 
             if (currentChaseTime >= maxChaseTime)
             {
@@ -78,6 +82,21 @@ public class FrostyRoam : MonoBehaviour
         {
             Patrol();
         }
+
+        // Check if it's time to move towards the last player position
+        if (isMovingToLastPlayer)
+        {
+            currentMoveToLastPlayerTime += Time.deltaTime;
+
+            if (currentMoveToLastPlayerTime >= moveToLastPlayerTime)
+            {
+                currentState = EnemyState.Roaming;
+                SetDestinationToLastPlayerPosition();
+                CalculateNextRoamTime();
+                isMovingToLastPlayer = false;
+                currentMoveToLastPlayerTime = 0f;
+            }
+        }
     }
 
     private void Chase()
@@ -85,16 +104,24 @@ public class FrostyRoam : MonoBehaviour
         agent.SetDestination(player.transform.position);
     }
 
-    private void Patrol() 
+    private void Patrol()
     {
         if (ReachedDestination())
         {
             idleTimer += Time.deltaTime;
             if (idleTimer >= nextRoamTime)
             {
-                SetRandomDestination();
-                CalculateNextRoamTime();
-                idleTimer = 0f;
+                // Check if it's time to move towards the last player position
+                if (!isMovingToLastPlayer)
+                {
+                    isMovingToLastPlayer = true;
+                }
+                else
+                {
+                    SetRandomDestination();
+                    CalculateNextRoamTime();
+                    idleTimer = 0f;
+                }
             }
         }
     }
@@ -124,5 +151,15 @@ public class FrostyRoam : MonoBehaviour
     {
         nextRoamTime = Random.Range(minRoamFrequency, maxRoamFrequency);
         Debug.Log("Time Left Before Roam: " + nextRoamTime);
+    }
+
+    // Move towards the LastPlayerPosition (Waypoints)
+     private void SetDestinationToLastPlayerPosition()
+    {
+        PlayerPosition playerPosition = player.GetComponent<PlayerPosition>();
+        if (playerPosition != null)
+        {
+            agent.SetDestination(playerPosition.GetLastPosition());
+        }
     }
 }
