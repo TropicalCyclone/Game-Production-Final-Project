@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerLastPosition : MonoBehaviour
 {
+    [SerializeField]
+    private float waitTime;
     private bool playerInside = false;
 
     void OnTriggerEnter(Collider other)
@@ -24,7 +26,8 @@ public class PlayerLastPosition : MonoBehaviour
 
     IEnumerator UpdatePlayerPosition(PlayerPosition playerController)
     {
-        yield return new WaitForSeconds(10f);
+        Debug.Log("Wait Time: " + waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         if (playerInside)
         {
