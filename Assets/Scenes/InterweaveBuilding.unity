@@ -5974,7 +5974,7 @@ MonoBehaviour:
   groundedRadius: 0.35
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   groundSpherePosition: {x: 0, y: 0, z: 0}
   maxStamina: 100
   minStaminaUsable: 10
