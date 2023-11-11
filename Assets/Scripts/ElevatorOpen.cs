@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Playables;
 
 public class ElevatorOpen : MonoBehaviour
 {
-
+    [SerializeField] private UnityEvent _reachNum;
     [SerializeField] private Animator Leftdoor;
     [SerializeField] private Animator Rightdoor;
 
@@ -38,6 +39,7 @@ public class ElevatorOpen : MonoBehaviour
     {
         if (!_flashlightEvent)
         {
+            _reachNum.Invoke();
             ElevatorDoorClose();
             _flashlightEvent = true;
         }
