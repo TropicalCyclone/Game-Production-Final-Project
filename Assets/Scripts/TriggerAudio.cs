@@ -2,28 +2,39 @@
 
 public class TriggerAudio : MonoBehaviour
 {
-    public AudioClip TriggerSound;
+    public AudioClip[] TriggerSounds;
     public float Volume = 0.5f;
+    public AudioPlayer audioPlayer; // Drag and drop the GameObject with the AudioPlayer script attached.
 
     [HideInInspector]
     private bool isPlayed;
+
+    public enum PlayMode
+    {
+        Single,
+        Multiple
+    }
+
+    public PlayMode playMode = PlayMode.Single;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !isPlayed)
         {
-            if (TriggerSound)
+            if (TriggerSounds != null && TriggerSounds.Length > 0 && audioPlayer != null)
             {
-                AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-
-                if (!audioSource)
+                if (playMode == PlayMode.Single)
                 {
-                    audioSource = gameObject.AddComponent<AudioSource>();
+                    int randomIndex = Random.Range(0, TriggerSounds.Length);
+                    audioPlayer.PlayAudio(TriggerSounds[randomIndex], Volume);
                 }
-
-                audioSource.clip = TriggerSound;
-                audioSource.volume = Volume;
-                audioSource.Play();
+                else if (playMode == PlayMode.Multiple)
+                {
+                    foreach (AudioClip clip in TriggerSounds)
+                    {
+                        audioPlayer.PlayAudio(clip, Volume);
+                    }
+                }
 
                 isPlayed = true;
             }
