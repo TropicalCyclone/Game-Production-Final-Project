@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacardSpawner : MonoBehaviour
+public class NotesShuffler : MonoBehaviour
 {
     public Transform[] spawnPoints;
 
     private List<Transform> availableSpawnPoints = new List<Transform>();
-    public GameObject[] objectsToMove; // Game Objects to move to spawn points
+    public GameObject[] objectsToMove;
 
     void Start()
     {
