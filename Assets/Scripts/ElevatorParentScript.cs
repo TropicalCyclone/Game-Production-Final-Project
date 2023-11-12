@@ -12,7 +12,7 @@ public class ElevatorParentScript : MonoBehaviour
     {
         if (!TeleportTrigger)
         {
-            player.transform.position = tp.position;
+            player.transform.position = new Vector3(player.transform.position.x, tp.position.y,player.transform.position.z);
             TeleportTrigger = true;
         }
     }
@@ -21,7 +21,6 @@ public class ElevatorParentScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("Found Player");
             player = other.gameObject;  
         }
     }
