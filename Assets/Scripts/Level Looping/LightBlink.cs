@@ -30,7 +30,7 @@ public class LightBlink : MonoBehaviour
 
     public void LightsOff()
     {
-        SetLights(0.1f);
+        SetLights(0.03f);
     }
 
     IEnumerator iBlink(float time, float intensity, int amount)
@@ -40,7 +40,7 @@ public class LightBlink : MonoBehaviour
             SetLights(intensity);
             yield return new WaitForSeconds(time);
             RenderSettings.ambientLight = _lightColor;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }
