@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class FlashlightShake : MonoBehaviour
 {
     [Header("References")]
@@ -31,7 +31,11 @@ public class FlashlightShake : MonoBehaviour
     private float ShakeDetectionThreshold;
     private float timeSinceLastShake;
     private float sqrShakeDetectionThreshold;
-    
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnShakeStart;
+    [SerializeField] private UnityEvent OnShakeStop;
+
     // Start is called before the first frame update
 
     private void FixedUpdate()
@@ -58,6 +62,7 @@ public class FlashlightShake : MonoBehaviour
             //Debug.Log(velocity.sqrMagnitude);
             if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
             {
+                OnShakeStart.Invoke();
                 RechargeBattery();
                 timeSinceLastShake = Time.unscaledTime;
 
@@ -66,6 +71,7 @@ public class FlashlightShake : MonoBehaviour
 
             if (flashlight.intensity > 0)
             {
+                OnShakeStop.Invoke();
                 flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
                 UpdateUI(batteryCapacity, flashlight.intensity);
             }
