@@ -39,9 +39,17 @@ public class ElevatorOpen : MonoBehaviour
     {
         if (!_flashlightEvent)
         {
-            _reachNum.Invoke();
-            ElevatorDoorClose();
+            StartCoroutine(FlashlightEvent());
             _flashlightEvent = true;
         }
+    }
+
+    IEnumerator FlashlightEvent()
+    {
+        ElevatorDoorClose();
+        yield return new WaitForSeconds(1f);
+        _reachNum.Invoke();
+        yield return new WaitForSeconds(10);
+        ElevatorDoorOpen();
     }
 }
