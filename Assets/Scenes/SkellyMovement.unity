@@ -382,9 +382,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 50
-  m_Acceleration: 1000
+  m_Acceleration: 100
   avoidancePriority: 50
-  m_AngularSpeed: 100
+  m_AngularSpeed: 10
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -475,13 +475,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 489509807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5296374a5bf74674fb34ba081cdebe7c, type: 3}
+  m_Script: {fileID: 11500000, guid: e87795d78c36732489e240d3b7d532cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 493818997}
   skelly: {fileID: 489509807}
-  agent: {fileID: 0}
-  playerFOV: {fileID: 0}
 --- !u!4 &493818997 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8872290491962544186, guid: 154a332bbfbe4734da0739c97a961d92,
@@ -816,6 +814,7 @@ MonoBehaviour:
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
+    serializedVersion: 2
     m_Bits: 8
   m_UseGeometry: 0
   m_DefaultArea: 0
@@ -829,8 +828,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9403c9f068d35844ca13f69468189804, type: 2}
   m_BuildHeightMesh: 0
-  m_LastPosition: {x: -1.0620003, y: -0.09996033, z: 0}
-  m_LastRotation: {x: -0, y: -0, z: -0, w: 1}
 --- !u!4 &1718798422 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4321738725853834268, guid: e66679336e81163448ddc1d0c185a732,
