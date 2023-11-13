@@ -7,6 +7,7 @@ public class FlashlightShake : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private HealthBarBehaviour healthBarBehaviour;
+    [SerializeField]
     Rigidbody rb;
     [SerializeField]
     private Light flashlight;
@@ -29,23 +30,23 @@ public class FlashlightShake : MonoBehaviour
     private float MinShakeInterval;
     [SerializeField]
     private float ShakeDetectionThreshold;
-    private float timeSinceLastShake;
     private float sqrShakeDetectionThreshold;
-
+    private float timeSinceLastShake;
+    private bool runOnce;
     [Header("Events")]
     [SerializeField] private UnityEvent OnShakeStart;
     [SerializeField] private UnityEvent OnShakeStop;
 
     // Start is called before the first frame update
 
-    private void FixedUpdate()
-    {
-        velocity = (transform.transform.position - lastpos)/Time.deltaTime;
-        lastpos = transform.position;
-    }
+    
     void Awake()
     {
-        
+        if (!rb)
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+        sqrShakeDetectionThreshold = Mathf.Pow(ShakeDetectionThreshold, 2);
         //rb = GetComponent<Rigidbody>();
         if(!flashlight)
         flashlight = GetComponentInChildren<Light>();
@@ -54,28 +55,80 @@ public class FlashlightShake : MonoBehaviour
         if(!healthBarBehaviour)
         healthBarBehaviour = GetComponent<HealthBarBehaviour>();
     }
+    private void FixedUpdate()
+    {
+
+        
+        
+    }
 
     private void Update()
     {
+        velocity = (transform.position - lastpos) / Time.deltaTime;
         if (isOn)
         {
+            if (IsShaking())
+            {
+                if (!runOnce)
+                {
+                    OnShakeStart.Invoke();
+                }
+                runOnce = false;
+                RechargeBattery();
+                timeSinceLastShake = Time.deltaTime;
+            }
+            else
+            {
+                if (!runOnce)
+                {
+                    OnShakeStop.Invoke();
+                    runOnce = true;
+                }
+            }
+                if (flashlight.intensity > 0)
+                {
+                    flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
+                    UpdateUI(batteryCapacity, flashlight.intensity);
+                }
+            lastpos = transform.position;
+
+            /*
             //Debug.Log(velocity.sqrMagnitude);
-            if (velocity.sqrMagnitude >= ShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
+            if (velocity.sqrMagnitude >= sqrShakeDetectionThreshold && Time.unscaledTime >= timeSinceLastShake + MinShakeInterval)
             {
                 OnShakeStart.Invoke();
+                runOnce = false;
                 RechargeBattery();
                 timeSinceLastShake = Time.unscaledTime;
-
             }
-
-
-            if (flashlight.intensity > 0)
+            else
             {
-                OnShakeStop.Invoke();
-                flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
-                UpdateUI(batteryCapacity, flashlight.intensity);
+                if (flashlight.intensity > 0)
+                {
+                    flashlight.intensity -= batteryDrainSpeed * Time.deltaTime;
+                    UpdateUI(batteryCapacity, flashlight.intensity);
+                }
+                if (!runOnce)
+                {
+                    OnShakeStop.Invoke();
+                    runOnce = true;
+                }
             }
+            */
         }
+    }
+    private bool IsShaking()
+    {
+        
+        float delta = Time.time - timeSinceLastShake;
+        float speed = velocity.magnitude / delta;
+        Debug.Log(speed);
+        if (speed > ShakeDetectionThreshold)
+        {
+            timeSinceLastShake = Time.time + MinShakeInterval;
+            return true;
+        }
+        return false;
     }
     public void RechargeBattery()
     {
