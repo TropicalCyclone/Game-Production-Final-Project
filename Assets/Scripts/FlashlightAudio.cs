@@ -7,19 +7,64 @@ public class FlashlightAudio : MonoBehaviour
     private float startVolume;
     private bool start;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private Sound audio;
+    [SerializeField] private AudioClip Walkaudio;
+    [SerializeField] private AudioClip Runaudio;
+    [SerializeField] private bool isMovement;
+
+    private bool isWalk = false;
+    private bool run;
     // Start is called before the first frame update
     void Awake()
     {
-        startVolume = _audioSource.volume;
-        _audioSource.volume = 0;
-        _audioSource.Play();
+        if (!isMovement)
+        {
+            startVolume = _audioSource.volume;
+            _audioSource.volume = 0;
+            _audioSource.Play();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StartWalk()
+    {
+        
+        AudioClip audio;
+        if (run)
+        {
+            audio = Runaudio;
+        }
+        else
+        {
+            audio = Walkaudio;      
+        }
+        _audioSource.clip = audio;
+        if (!isWalk)
+        {
+            
+            _audioSource.Play();
+            Debug.Log("Walking");
+            isWalk = true;
+        }
+    }
+
+    public void EndWalk()
+    {
+        isWalk = false;
+        _audioSource.Stop();
+    }
+
+    public void RunStart()
+    {
+        run = true;
+    }
+    public void RunEnd()
+    {
+        run = false;
     }
     public void ShakeStart()
     {

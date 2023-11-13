@@ -27,8 +27,9 @@ public class Stamina : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] private UnityEvent isWalking;
-    [SerializeField] private UnityEvent playerIsRunning;
-
+    [SerializeField] private UnityEvent EndWalking;
+    [SerializeField] private UnityEvent RunningStart;
+    [SerializeField] private UnityEvent RunningEnd;
     private Vector2 move;
     private Vector2 lastMove;
 
@@ -97,6 +98,7 @@ public class Stamina : MonoBehaviour
 
         if (!isMoving)
         {
+            EndWalking.Invoke();
             isRunning = false;
         }
         else
@@ -107,11 +109,12 @@ public class Stamina : MonoBehaviour
         {
             if (isRunning)
             {
-                playerIsRunning.Invoke();
+                RunningStart.Invoke();
                 continuousMoveProviderBase.moveSpeed = RunSpeed;
             }
             else
             {
+                RunningEnd.Invoke();
                 continuousMoveProviderBase.moveSpeed = moveSpeed;
             }
         }
