@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Stamina : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class Stamina : MonoBehaviour
 
     [Header("Healthbar Script")]
     [SerializeField] private HealthBarBehaviour healthBar;
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent isWalking;
+    [SerializeField] private UnityEvent playerIsRunning;
 
     private Vector2 move;
     private Vector2 lastMove;
@@ -94,10 +99,15 @@ public class Stamina : MonoBehaviour
         {
             isRunning = false;
         }
+        else
+        {
+            isWalking.Invoke();
+        }
         if (continuousMoveProviderBase)
         {
             if (isRunning)
             {
+                playerIsRunning.Invoke();
                 continuousMoveProviderBase.moveSpeed = RunSpeed;
             }
             else

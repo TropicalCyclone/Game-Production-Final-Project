@@ -5,12 +5,15 @@ using UnityEngine;
 public class FlashlightAudio : MonoBehaviour
 {
     private float startVolume;
+    private bool start;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private Sound audio;
     // Start is called before the first frame update
     void Awake()
     {
         startVolume = _audioSource.volume;
         _audioSource.volume = 0;
+        _audioSource.Play();
     }
 
     // Update is called once per frame
@@ -20,12 +23,16 @@ public class FlashlightAudio : MonoBehaviour
     }
     public void ShakeStart()
     {
-        StartCoroutine(FadeIn(_audioSource,0.5f));
+        _audioSource.volume = 1f;
+        //StartCoroutine(FadeIn(_audioSource,0.5f));
+        Debug.Log("Shake start");
     }
 
     public void ShakeStop()
     {
-        StartCoroutine(FadeOut(_audioSource, 0.5f));
+        _audioSource.volume = 0f;
+        //StartCoroutine(FadeOut(_audioSource, 0.5f));
+        Debug.Log("Shake stop");
     }
 
     public IEnumerator FadeOut(AudioSource audioSource, float FadeTime)
@@ -36,7 +43,6 @@ public class FlashlightAudio : MonoBehaviour
 
             yield return null;
         }
-
         audioSource.Stop();
     }
 
