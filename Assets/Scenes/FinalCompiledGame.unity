@@ -527,16 +527,16 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.5393658
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -624,14 +624,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4053a582eaa4f7459ac91f88d237280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
-  audio:
-    name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  _audioSource: {fileID: 611258678}
+  Walkaudio: {fileID: 8300000, guid: 7fdb9d930369ef94b92000bc5f36cf35, type: 3}
+  Runaudio: {fileID: 8300000, guid: 6c1768fc62ac1b24780a8801a3df7dce, type: 3}
+  isMovement: 1
 --- !u!20 &1036694031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5139121075735473970, guid: 41787d6e41e4e00428a6cd6973e28ee2,
@@ -9640,13 +9636,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1394703098}
-  audio:
-    name: 
-    clip: {fileID: 0}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
+  Walkaudio: {fileID: 0}
+  Runaudio: {fileID: 0}
+  isMovement: 0
 --- !u!54 &1394703103 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 7911356190565006542, guid: b5f8d62287d60bc41be39681885f10f4,
@@ -9786,6 +9778,106 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxStamina
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningStart.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 611258679}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 611258679}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 611258679}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 611258679}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartWalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndWalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: RunningStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FlashlightAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FlashlightAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: isWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2671554911532308712, guid: 41787d6e41e4e00428a6cd6973e28ee2,
+        type: 3}
+      propertyPath: EndWalking.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3139240983916355580, guid: 41787d6e41e4e00428a6cd6973e28ee2,
         type: 3}
