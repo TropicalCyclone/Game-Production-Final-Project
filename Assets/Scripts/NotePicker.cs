@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class NotePicker : MonoBehaviour
 {
     [SerializeField] private List<Note> notes;
+    [SerializeField] private List<GameObject> noteWall;
     private int _pickupOrder = 0;
 
     [SerializeField] private UnityEvent AllNotesDone;
@@ -19,6 +20,7 @@ public class NotePicker : MonoBehaviour
     public void CorrectPickup()
     {
         notes[_pickupOrder].gameObject.SetActive(false);
+        noteWall[_pickupOrder].gameObject.SetActive(true);
         if (_pickupOrder == notes.Count)
         {
             AllNotesPickedUp();
