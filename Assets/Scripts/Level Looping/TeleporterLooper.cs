@@ -35,12 +35,15 @@ public class TeleporterLooper : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (!otherLooper.didTeleport())
+            if (!otherLooper.didTeleport() || otherLooper == null)
             {
                 Vector3 playerPos = other.transform.position;
                 other.gameObject.transform.position = new Vector3(playerPos.x, playerPos.y + teleportHeight, playerPos.z);
                 _hasTeleported = true;
-                otherLooper.HasTeleported = false;
+                if (otherLooper != null)
+                {
+                    otherLooper.HasTeleported = false;
+                }
             }
         }
     }
@@ -48,10 +51,13 @@ public class TeleporterLooper : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (otherLooper.didTeleport())
+            if (otherLooper != null)
             {
-                _hasTeleported = false;
-                otherLooper.HasTeleported = false;
+                if (otherLooper.didTeleport())
+                {
+                    _hasTeleported = false;
+                    otherLooper.HasTeleported = false;
+                }
             }
         }
     }
