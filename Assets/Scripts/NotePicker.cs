@@ -16,15 +16,23 @@ public class NotePicker : MonoBehaviour
     public void CorrectPickup()
     {
         notes[_pickupOrder].gameObject.SetActive(false);
-        if (_pickupOrder < notes.Count)
-        {
-            _pickupOrder++;
-            notes[_pickupOrder].PlayMusic();
-        }
         if (_pickupOrder == notes.Count)
         {
             AllNotesPickedUp();
+            return;
         }
+        
+        if (_pickupOrder < notes.Count)
+        {
+            _pickupOrder++;
+            ActivateNote(_pickupOrder);
+        }
+    }
+
+    public void ActivateNote(int value)
+    {
+        notes[value].gameObject.SetActive(true);
+        notes[value].PlayMusic();
     }
 
     public void AllNotesPickedUp()
