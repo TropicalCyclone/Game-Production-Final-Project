@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1716320728883483679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attach-ciit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1756807426967522539}
   - component: {fileID: 7540424512818654510}
   - component: {fileID: 3296094880267946012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,9 @@ HingeJoint:
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -2.568, y: 0, z: -4.8867536}
   serializedVersion: 2
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
-    spring: 4.95
+    spring: 5
     damper: 0.2
     targetPosition: 0
   m_UseMotor: 0
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 1988245868096279895}
   - component: {fileID: 4048969531971769473}
   - component: {fileID: 7342926670272991200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 6837216970286710565}
   - component: {fileID: 596432345123165866}
   - component: {fileID: 311731023275865358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door Puller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6209345451871537886}
   - component: {fileID: 6929850866983609639}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door1MainTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4644161140672606470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 285c6d8108ca04141a77fc9662acad55, type: 3}
   m_Name: 
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 4162076086026253738}
   - component: {fileID: 4622204386604741686}
   - component: {fileID: 4822493528334900930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KeyHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 6449734680863557231}
   - component: {fileID: 7929572426925795511}
   - component: {fileID: 5049433352226592498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoverStateVisuals - Only Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -935,7 +935,7 @@ GameObject:
   - component: {fileID: 1451366835268208888}
   - component: {fileID: 5061102560819203811}
   - component: {fileID: 7148191058078587763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurnableKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 500207044240239162}
   - component: {fileID: 665036051736956782}
   - component: {fileID: 8385152487647672521}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lock Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1163,7 +1163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767442306339097700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurnableKeyTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 5781310801274397511}
   - component: {fileID: 2650685339540513770}
   - component: {fileID: 3506188900623560115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurnableKeyCIIT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
