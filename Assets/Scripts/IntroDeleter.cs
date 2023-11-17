@@ -7,7 +7,7 @@ public class IntroDeleter : MonoBehaviour
     [SerializeField] private ElevatorOpen elevator;
     [SerializeField] private List<GameObject> DeleteList;
 
-    void DeleteAllObjects()
+    public void DeleteAllObjects()
     {
          foreach(GameObject obj in DeleteList)
         {
