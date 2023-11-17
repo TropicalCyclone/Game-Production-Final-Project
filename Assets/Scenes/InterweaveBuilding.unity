@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 1182495256}
   - component: {fileID: 1182495255}
   - component: {fileID: 1182495257}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5398,124 +5398,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &1482375799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482375801}
-  - component: {fileID: 1482375800}
-  - component: {fileID: 1482375802}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1482375800
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482375799}
-  m_Enabled: 1
-  serializedVersion: 10
-  m_Type: 1
-  m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1482375801
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482375799}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &1482375802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482375799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 0
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!1 &1718588328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,7 +5409,7 @@ GameObject:
   - component: {fileID: 1718588329}
   - component: {fileID: 1718588331}
   - component: {fileID: 1718588330}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5727,7 +5609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458719758028542}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: LookAtFar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5758,7 +5640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458719915738853}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugLook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5790,7 +5672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720456691818}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5824,7 +5706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720574303118}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugPlayerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5858,7 +5740,7 @@ GameObject:
   - component: {fileID: 4539458720848141057}
   - component: {fileID: 4539458720848141062}
   - component: {fileID: 4539458720848141063}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5949,7 +5831,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   sprintSpeed: 5
   crouchSpeed: 1
-  slopeSpeedMultiplier: 0.5
+  slopeSpeedMultiplier: 0.9
   speedChangeRate: 10
   jumpHeight: 1.2
   jumpTimeout: 0.1
@@ -5974,7 +5856,7 @@ MonoBehaviour:
   groundedRadius: 0.35
   groundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 8
   groundSpherePosition: {x: 0, y: 0, z: 0}
   maxStamina: 100
   minStaminaUsable: 10
@@ -5982,13 +5864,13 @@ MonoBehaviour:
   timeBeforeStart: 5
   staminaRegenValue: 2
   walkBobSpeed: 10
-  walkBobAmount: 0.008
+  walkBobAmount: 0.005
   SprintBobSpeed: 14
-  SprintBobAmount: 0.02
+  SprintBobAmount: 0.008
   crouchBobSpeed: 5
-  crouchBobAmount: 0.005
+  crouchBobAmount: 0.002
   currentHandTool: {fileID: 4539458720998305694}
-  forceMagnitude: 1
+  forceMagnitude: 1.5
 --- !u!1 &4539458720954275768
 GameObject:
   m_ObjectHideFlags: 0
@@ -5998,7 +5880,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458720954275769}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DebugForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6117,7 +5999,7 @@ GameObject:
   - component: {fileID: 4539458720998305695}
   - component: {fileID: 4539458720998305693}
   - component: {fileID: 4539458720998305692}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6148,7 +6030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4539458721084486383}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6260,6 +6142,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 737866669}
   - {fileID: 904795883}
-  - {fileID: 1482375801}
   - {fileID: 1143015114}
   - {fileID: 223475251}
